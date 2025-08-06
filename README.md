@@ -44,8 +44,12 @@ sudo ufw status
 
 cd /
 cd /var/www/
-rm -rf html
+sudo rm -rf html
+
+sudo chown -R user-name:user-name /var/www
+
 git clone example.repository.git
+
 sudo nano /etc/apache2/sites-available/000-default.conf
 の中の、 DocumentRoot /var/www/html
 を、 DocumentRoot /var/www/example.repository.git
@@ -55,6 +59,8 @@ sudo chown -R www-data:www-data /var/www/example.repository
 sudo chmod -R 755 /var/www/example.repository
 
 # cloudflared install
+
+cd ~
 
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 
@@ -78,7 +84,7 @@ sudo mkdir -p /etc/cloudflared
 
 # cloudflare にレコードを生成
 
-cloudflared tunnel route dns moto-tunnel example.com
+cloudflared tunnel route dns example-tunnel example.com
 
 # cloudflare を常駐化
 
@@ -95,7 +101,7 @@ tunnel: tunnel-id
 credentials-file: /etc/cloudflared/tunnel-id.json
 
 ingress:
-  - hostname: ssh.moto0314.com
+  - hostname: ssh.example.com
     service: ssh://localhost:22
   - hostname: example.com
     service: http://localhost:80
