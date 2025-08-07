@@ -14,7 +14,7 @@ Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-71-generic x86_64)
 
 sudo apt install git<br>
 cd ~<br>
-ssh-keygen -t ed25519 -f id_ed25519_github -C "example@ths.hal.ac.jp"
+ssh-keygen -t ed25519 -f id_ed25519_github -C "example@ths.hal.ac.jp"<br>
 mkdir -p ~/.ssh<br>
 chmod 700 ~/.ssh<br>
 sudo chmod -R 775 /var/www<br>
