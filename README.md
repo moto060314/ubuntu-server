@@ -140,7 +140,7 @@ sudo nano ~/.ssh/config<br>
 その中に、<br>
 
 ```txt
-Host ssh.moto0314.com
+Host ssh.domain.com
   User username # ← SSH ログインするユーザー名
   ProxyCommand cloudflared access ssh --hostname %h
 ```
