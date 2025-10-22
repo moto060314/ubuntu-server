@@ -72,9 +72,9 @@ ingress:
 ```sh
 # cloudflare を常駐化
 sudo cloudflared service install
-sudo systemctl daemon-reload<br>
-sudo systemctl restart cloudflared<br>
-sudo systemctl status cloudflared<br>
+sudo systemctl daemon-reload
+sudo systemctl restart cloudflared
+sudo systemctl status cloudflared
 ```
 
 # SSH は、ローカル PC で、
